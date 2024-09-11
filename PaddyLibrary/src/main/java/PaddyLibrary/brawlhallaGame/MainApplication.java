@@ -1,7 +1,7 @@
 package PaddyLibrary.brawlhallaGame;
 
-import paddylibrary.brawlhallaGame.gameserver.GameClient;
-import paddylibrary.brawlhallaGame.gameserver.GameServer;
+import PaddyLibrary.brawlhallaGame.gameserver.GameClient;
+import PaddyLibrary.brawlhallaGame.gameserver.GameServer;
 
 import javax.swing.*;
 import java.awt.*;

@@ -6,7 +6,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.ArrayList;
 
 public class GameBoard extends JPanel implements ActionListener, KeyListener {
     private final int WIDTH = 800;
@@ -14,10 +13,6 @@ public class GameBoard extends JPanel implements ActionListener, KeyListener {
     private final int UNIT_SIZE = 20;
     private final int ALL_UNITS = (WIDTH * HEIGHT) / (UNIT_SIZE * UNIT_SIZE);
     private final int DELAY = 140;
-
-    private Image snakeHead;
-    private Image snakeBody;
-
 
     private final int[] x = new int[ALL_UNITS];
     private final int[] y = new int[ALL_UNITS];
@@ -39,12 +34,6 @@ public class GameBoard extends JPanel implements ActionListener, KeyListener {
         this.setBackground(Color.BLACK);
         this.setFocusable(true);
         this.addKeyListener(this);
-
-        // Bilder laden
-        snakeHead = new ImageIcon("images/snakeHead.png").getImage();
-        snakeBody = new ImageIcon("images/snakeBody.png").getImage();
-
-
 
         // Setup retry button
         retryButton = new JButton("Retry");
@@ -88,24 +77,17 @@ public class GameBoard extends JPanel implements ActionListener, KeyListener {
     public void draw(Graphics g) {
         if (running) {
             g.setColor(Color.RED);
-            g.fillOval(foodX, foodY, UNIT_SIZE, UNIT_SIZE);
+            g.fillRect(foodX, foodY, UNIT_SIZE, UNIT_SIZE); // Futter zeichnen
 
             // Schlange zeichnen
             for (int i = 0; i < bodyParts; i++) {
                 if (i == 0) {
-                    g.drawImage(snakeHead, x[i], y[i], UNIT_SIZE, UNIT_SIZE, this); // Kopf der Schlange
+                    g.setColor(Color.GREEN); // Kopf der Schlange
                 } else {
-                    g.drawImage(snakeBody, x[i], y[i], UNIT_SIZE, UNIT_SIZE, this); // Körper der Schlange
-                }
-            }
-            /*for (int i = 0; i < bodyParts; i++) {
-                if (i == 0) {
-                    g.setColor(Color.GREEN);
-                } else {
-                    g.setColor(new Color(45, 180, 0));
+                    g.setColor(Color.BLUE); // Körper der Schlange
                 }
                 g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
-            }*/
+            }
         } else {
             gameOver(g);
         }
