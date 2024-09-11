@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="PaddyLibrary">
+    <output-path>$PROJECT_DIR$/jarReleases</output-path>
+    <root id="archive" name="PaddyLibrary.jar">
+      <element id="module-output" name="PaddyLibrary" />
+    </root>
+  </artifact>
+</component>
