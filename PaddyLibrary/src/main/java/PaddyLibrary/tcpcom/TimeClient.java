@@ -32,7 +32,7 @@ public class TimeClient implements TCPClientListener {
                     "Time Client", JOptionPane.INFORMATION_MESSAGE);
     }
 
-    public static void main(String[] args) {
+    public static void main() {
         new TimeClient();
     }
 }
