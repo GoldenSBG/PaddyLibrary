@@ -1,12 +1,8 @@
 package PaddyLibrary.ninjalla;
 
-import PaddyLibrary.snakeGame.GameBoard;
-
-import javax.swing.*;
-
 public class NinjallaMain {
 
-    public static void main(String[] args) {
+    public void start() {
     }
 
     public void pause() {
@@ -15,5 +11,11 @@ public class NinjallaMain {
 
     public void stop() {
         // Logik zum Stoppen des Spiels
+    }
+
+    private static void main(String[] args) {
+        /*
+        Testlogik in Java
+        */
     }
 }
