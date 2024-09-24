@@ -1,0 +1,18 @@
+    Idee [Singleplayer]:
+    Unendlich sich selbst generierende Map aus den vorhandenen Baublöcken
+    Jump'n'Run game ansich
+    Ninja als hauptcharakter
+    Gegner eleminieren und coins erhalten: mit diesen bessere Ausrüstung, Abilitys etc kaufen (im derzeitigen Spiel)
+        -> In manchen Ebenen (höhe) erscheinen mit einer zufälligen Wahrscheinlichkeit krassere Gegner (bosse), welche man eleminieren kann
+
+
+    Idee [Multiplayer]:
+    Unendlich sich selbst generierende Map aus den vorhandenen Baublöcken
+    Jump'n'Run game ansich
+    Ninja als hauptcharakter
+    Gegner eleminieren und coins erhalten: mit diesen bessere Ausrüstung, Abilitys etc kaufen (im derzeitigen Spiel)
+        -> In manchen Ebenen (höhe) erscheinen mit einer zufälligen Wahrscheinlichkeit krassere Gegner (bosse), welche man eleminieren kann
+    ein der vorgegebenen oder selbstgewählten Zeit die meisten Punkte erzielen (durch Gegner eleminierungen)
+    Anderen Spieler eliminieren können und punkte sowie coins zu erhalten
+
+    Hauptmenü: SinglePlayer | Multiplayer | Skinselector
