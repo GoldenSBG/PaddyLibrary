@@ -4,8 +4,8 @@ import javax.swing.*;
 
 public class NinjallaMain {
 
+    public void start(String[] args) {
 
-    public void start() {
     }
 
     public void pause() {
