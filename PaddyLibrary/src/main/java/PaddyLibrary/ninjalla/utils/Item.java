@@ -1,6 +1,6 @@
 package PaddyLibrary.ninjalla.utils;
 
-import PaddyLibrary.ninjalla.charakters.Player;
+import PaddyLibrary.ninjalla.entities.Player;
 
 import java.util.Random;
 
