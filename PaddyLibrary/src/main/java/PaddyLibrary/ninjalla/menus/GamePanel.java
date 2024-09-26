@@ -29,7 +29,7 @@ public class GamePanel extends JPanel implements KeyListener {
     private ArrayList<Platform> platforms;
     private ArrayList<Enemy> enemies; // List of enemies
     private World world; // The world with platforms
-
+    BufferedImage idle;
 
     public GamePanel() {
         setFocusable(true);
@@ -69,12 +69,22 @@ public class GamePanel extends JPanel implements KeyListener {
         }
 
         // Draw the player
-        g.setColor(Color.RED);
-        g.fillRect(playerX, playerY, playerWidth, playerHeight);
+        //g.setColor(Color.RED);
+        //g.fillRect(playerX, playerY, playerWidth, playerHeight);
+        loadImage();
+        g.drawImage(idle, playerX, playerY, null);
 
         // Draw enemies
         for (Enemy enemy : enemies) {
             enemy.draw(g);
+        }
+    }
+
+    private void loadImage() {
+        try {
+            idle = ImageIO.read(getClass().getResourceAsStream("/ninjalla/IDLE.png"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 

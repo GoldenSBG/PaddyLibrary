@@ -1,5 +1,10 @@
 package PaddyLibrary.ninjalla.entities;
 
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+
 public class Player {
     private String name;
     private int health;
@@ -7,6 +12,8 @@ public class Player {
     private int yPosition;
     private int coins;
 
+    public BufferedImage idle, idle2;
+    public String direction;
     // Konstruktor
     public Player() {
         this.name = "Ninja";
@@ -14,6 +21,19 @@ public class Player {
         this.xPosition = 0;  // Startposition auf der X-Achse
         this.yPosition = 0;  // Startposition auf der Y-Achse
         this.coins = 0;      // Startmünzen
+    }
+
+    public void getPlayerImage() {
+        try {
+            idle = ImageIO.read(getClass().getResourceAsStream("/ninjalla/IDLE.png"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void draw(Graphics2D graphics2D) {
+        BufferedImage image = null;
+        image = idle;
     }
 
     // Spawn den Spieler am Startpunkt
