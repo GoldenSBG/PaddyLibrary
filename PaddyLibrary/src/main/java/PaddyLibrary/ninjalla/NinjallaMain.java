@@ -60,3 +60,9 @@ public class NinjallaMain extends JFrame {
         new NinjallaMain();
     }
 }
+/* toDO
+- Map generierung machen -> soll weitergenerieren
+- Spieler und Enemy Texture ersetzen (keine Würfel)
+- Platformen texure machen
+- allg Visuals hinzufügen
+ */
