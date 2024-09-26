@@ -4,11 +4,15 @@ import PaddyLibrary.ninjalla.entities.Enemy;
 import PaddyLibrary.ninjalla.world.Platform;
 import PaddyLibrary.ninjalla.world.World;
 
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 import java.awt.Graphics;
 import java.awt.Color;
 import java.awt.event.KeyListener;
 import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class GamePanel extends JPanel implements KeyListener {
@@ -25,6 +29,7 @@ public class GamePanel extends JPanel implements KeyListener {
     private ArrayList<Platform> platforms;
     private ArrayList<Enemy> enemies; // List of enemies
     private World world; // The world with platforms
+
 
     public GamePanel() {
         setFocusable(true);
@@ -47,6 +52,7 @@ public class GamePanel extends JPanel implements KeyListener {
         enemies.add(new Enemy(200, 100));
         enemies.add(new Enemy(400, 150));
         enemies.add(new Enemy(600, 200));
+
     }
 
     @Override
