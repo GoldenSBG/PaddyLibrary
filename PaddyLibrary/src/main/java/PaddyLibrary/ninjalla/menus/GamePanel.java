@@ -82,7 +82,11 @@ public class GamePanel extends JPanel implements KeyListener {
 
     private void loadImage() {
         try {
-            idle = ImageIO.read(getClass().getResourceAsStream("/ninjalla/idle1.png"));
+            idle = ImageIO.read(getClass().getResourceAsStream("/ninjalla/player/idle1.png"));
+            idle = ImageIO.read(getClass().getResourceAsStream("/ninjalla/player/idle2.png"));
+            idle = ImageIO.read(getClass().getResourceAsStream("/ninjalla/player/idle3.png"));
+            idle = ImageIO.read(getClass().getResourceAsStream("/ninjalla/player/idle4.png"));
+            idle = ImageIO.read(getClass().getResourceAsStream("/ninjalla/player/idle5.png"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
