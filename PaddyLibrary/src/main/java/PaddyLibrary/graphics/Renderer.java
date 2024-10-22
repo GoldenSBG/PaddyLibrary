@@ -1,5 +1,8 @@
 package PaddyLibrary.graphics;
 
+import PaddyLibrary.Application;
+import PaddyLibrary.physics.collision.CollisionBound;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.FontMetrics;
