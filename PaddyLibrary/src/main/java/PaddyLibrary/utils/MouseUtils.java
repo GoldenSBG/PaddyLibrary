@@ -3,15 +3,6 @@ package PaddyLibrary.utils;
 
 import java.awt.event.MouseEvent;
 
-/**
- * Helper class that provides mouse input information. Alternative to {@link MouseEvent}.
- *
- * @author yiwuen
- *
- * @see MouseEvent
- *
- */
-
 public class MouseUtils {
 
     /**

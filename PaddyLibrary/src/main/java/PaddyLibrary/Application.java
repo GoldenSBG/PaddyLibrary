@@ -76,7 +76,7 @@ public class Application extends Canvas implements Runnable {
      *
      * @see SimpleWindow
      */
-    public final SimpleWindow SJGL_CreateWindow(final int width, final int height, final String title, final Application application) {
+    public final SimpleWindow CreateWindow(final int width, final int height, final String title, final Application application) {
         SimpleWindow simpleWindow = new SimpleWindow(width, height, title, application);
         setMainWindow(simpleWindow);
         return simpleWindow;

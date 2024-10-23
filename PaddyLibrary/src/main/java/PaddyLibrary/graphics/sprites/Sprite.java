@@ -9,7 +9,6 @@ import java.awt.image.BufferedImage;
 /**
  * The sprite class renders an image based on the path given or image loaded.
  *
- * @author yiwuen
  *
  * @see BufferedImage
  *

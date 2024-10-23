@@ -3,7 +3,6 @@ package PaddyLibrary.graphics.animation;
 /**
  * Base class for animations. There are many types of animations but one common animation is {@link SpriteAnimation}.
  *
- * @author yiwuen
  *
  * @see SpriteAnimation
  *

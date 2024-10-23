@@ -12,7 +12,6 @@ import javax.swing.JFrame;
 /**
  * Default window for SJGL. {@code SimpleWindow} should be used with the {@link Application} class.
  *
- * @author yiwuen
  *
  * @see JFrame
  * @see Application

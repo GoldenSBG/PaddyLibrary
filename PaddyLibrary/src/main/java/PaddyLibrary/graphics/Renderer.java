@@ -10,44 +10,44 @@ import java.awt.Graphics2D;
 
 public class Renderer {
 
-    public static final void SJGL_Font(Font font) {
+    public static final void Font(Font font) {
         Application.g.setFont(font);
     }
 
-    public static final FontMetrics SJGL_FontMetrics() {
+    public static final FontMetrics FontMetrics() {
         return Application.g.getFontMetrics();
     }
 
-    public static final FontMetrics SJGL_FontMetrics(Font font) {
+    public static final FontMetrics FontMetrics(Font font) {
         return Application.g.getFontMetrics(font);
     }
 
-    public static final Font SJGL_CurrentFont() {
+    public static final Font CurrentFont() {
         return Application.g.getFont();
     }
 
-    public static final void SJGL_DrawString(String str, Font font, int x, int y) {
-        SJGL_Font(font);
+    public static final void DrawString(String str, Font font, int x, int y) {
+        Font(font);
         Application.g.drawString(str, x, y);
     }
 
-    public static final Color SJGL_CurrentColor() {
+    public static final Color CurrentColor() {
         return Application.g.getColor();
     }
 
-    public static final void SJGL_Colori(int v) {
+    public static final void Colori(int v) {
         Application.g.setColor(new Color(v));
     }
 
-    public static final void SJGL_Color3i(int r, int g, int b) {
+    public static final void Color3i(int r, int g, int b) {
         Application.g.setColor(new Color(r, g, b));
     }
 
-    public static final void SJGL_Color4i(int r, int g, int b, int a) {
+    public static final void Color4i(int r, int g, int b, int a) {
         Application.g.setColor(new Color(r, g, b, a));
     }
 
-    public static final void SJGL_Color3f(float r, float g, float b) {
+    public static final void Color3f(float r, float g, float b) {
         Application.g.setColor(new Color(r, g, b));
     }
 
@@ -59,27 +59,27 @@ public class Renderer {
      *
      * @see Color
      */
-    public static final void SJGL_Color4f(float r, float g, float b, float a) {
+    public static final void Color4f(float r, float g, float b, float a) {
         Application.g.setColor(new Color(r, g, b, a));
     }
 
-    public static final void SJGL_DrawTriangle(int[] x, int[] y) {
+    public static final void DrawTriangle(int[] x, int[] y) {
         Application.g.drawPolygon(x, y, 3);
     }
 
-    public static final void SJGL_Triangle(int[] x, int[] y) {
+    public static final void Triangle(int[] x, int[] y) {
         Application.g.fillPolygon(x, y, 3);
     }
 
-    public static final void SJGL_DrawQuad(int[] x, int[] y) {
+    public static final void DrawQuad(int[] x, int[] y) {
         Application.g.drawPolygon(x, y, 4);
     }
 
-    public static final void SJGL_Quad(int[] x, int[] y) {
+    public static final void Quad(int[] x, int[] y) {
         Application.g.fillPolygon(x, y, 4);
     }
 
-    public static final void SJGL_DrawCircle(int x, int y, int radius) {
+    public static final void DrawCircle(int x, int y, int radius) {
         int d = radius * 2;
         Application.g.drawOval(x - radius, y - radius, d, d);
     }
@@ -93,7 +93,7 @@ public class Renderer {
      * @see Graphics2D
      * @see Application
      */
-    public static final void SJGL_Circle(int x, int y, int radius) {
+    public static final void Circle(int x, int y, int radius) {
         int d = radius * 2;
         Application.g.fillOval(x - radius, y - radius, d, d);
     }
@@ -108,7 +108,7 @@ public class Renderer {
      * @see Graphics2D
      * @see Application
      */
-    public static final void SJGL_Rect(int x, int y, int w, int h) {
+    public static final void Rect(int x, int y, int w, int h) {
         Application.g.fillRect(x, y, w, h);
     }
 
@@ -122,7 +122,7 @@ public class Renderer {
      * @see Graphics2D
      * @see Application
      */
-    public static final void SJGL_DrawRect(int x, int y, int w, int h) {
+    public static final void DrawRect(int x, int y, int w, int h) {
         Application.g.drawRect(x, y, w, h);
     }
 
@@ -132,7 +132,7 @@ public class Renderer {
      *
      * @see CollisionBound
      */
-    public static final void SJGL_DrawBounds(CollisionBound bound) {
+    public static final void DrawBounds(CollisionBound bound) {
         Application.g.draw(bound.getBounds());
     }
 
@@ -143,7 +143,7 @@ public class Renderer {
      *
      * @see Graphics2D
      */
-    public static final void SJGL_Translatei(int x, int y) {
+    public static final void Translatei(int x, int y) {
         Application.g.translate(x, y);
     }
 
@@ -154,7 +154,7 @@ public class Renderer {
      *
      * @see Graphics2D
      */
-    public static final void SJGL_Translatef(float x, float y) {
+    public static final void Translatef(float x, float y) {
         Application.g.translate(x, y);
     }
 
@@ -165,7 +165,7 @@ public class Renderer {
      *
      * @see Graphics2D
      */
-    public static final void SJGL_Scalei(int sx, int sy) {
+    public static final void Scalei(int sx, int sy) {
         Application.g.scale(sx, sy);
     }
 
@@ -176,7 +176,7 @@ public class Renderer {
      *
      * @see Graphics2D
      */
-    public static final void SJGL_Scalef(float sx, float sy) {
+    public static final void Scalef(float sx, float sy) {
         Application.g.scale(sx, sy);
     }
 

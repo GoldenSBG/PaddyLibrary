@@ -8,7 +8,6 @@ import java.awt.image.BufferedImage;
  * Simple spritesheet class. Contains important spritesheet methods such as splitting spritesheets into individual sprites and getting
  * a specific sprite from the sheet.
  *
- * @author yiwuen
  *
  * @see BufferedImage
  *
@@ -34,6 +33,10 @@ public class Spritesheet {
 
         int cols = ((sheet.getWidth() * sheet.getHeight()) / 8) >> 8;
         int rows = ((sheet.getWidth() * sheet.getHeight()) / 8) >> 8;
+
+        if (cols == 0 || rows == 0) {
+            throw new IllegalArgumentException("Invalid sprite sheet dimensions, cannot have zero columns or rows");
+        }
 
         spriteWidth = sheet.getWidth() / rows;
         spriteHeight = sheet.getHeight() / cols;

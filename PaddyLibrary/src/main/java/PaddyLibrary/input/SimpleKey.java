@@ -9,7 +9,6 @@ import java.util.Map;
 /**
  * Simple keyboard class. Provides a method to check if a key was pressed.
  *
- * @author yiwuen
  *
  * @see KeyAdapter
  *

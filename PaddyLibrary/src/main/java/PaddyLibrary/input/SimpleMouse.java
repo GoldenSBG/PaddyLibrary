@@ -12,7 +12,6 @@ import java.awt.event.MouseMotionListener;
  * the {@code buttonPressed(int button)} method. Super methods can be added and modified in external classes to have more mouse
  * functionality.
  *
- * @author yiwuen
  *
  * @see MouseAdapter
  * @see MouseMotionListener

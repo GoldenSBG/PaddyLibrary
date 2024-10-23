@@ -8,7 +8,6 @@ import PaddyLibrary.graphics.sprites.Spritesheet;
 /**
  * Simple animation class for animating an array of sprites (by looping through them at a constant speed).
  *
- * @author yiwuen
  *
  * @see Sprite
  * @see Spritesheet

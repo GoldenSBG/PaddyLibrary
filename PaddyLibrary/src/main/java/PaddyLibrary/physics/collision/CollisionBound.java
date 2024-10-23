@@ -4,7 +4,6 @@ import java.awt.Rectangle;
 
 /**
  * Default class for <strong>rectangle</strong> collision bounds.
- * @author yiwuen
  *
  * @see Rectangle
  *
