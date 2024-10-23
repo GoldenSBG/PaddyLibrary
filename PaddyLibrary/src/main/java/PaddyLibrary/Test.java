@@ -28,7 +28,7 @@ public class Test extends Application {
 
     private int x = 200, y = 100, velX = 5, velY = 5;
 
-    private Spritesheet sheet = new Spritesheet("/player/img.png");
+    private Spritesheet sheet = new Spritesheet("/player/img_1.png");
     private SpriteAnimation spriteAnimation = new SpriteAnimation(10, sheet.split());
 
     public Test() {
@@ -47,7 +47,7 @@ public class Test extends Application {
         Renderer.Color3f(1.0f, 0, 0);
         Renderer.Rect(0, 0, getWidth(), getHeight());
 
-        spriteAnimation.getCurrentSprite().render(x, y, 50, 50);
+        spriteAnimation.getCurrentSprite().render(x, y, 50, 50); //(Bild muss mind 50x50 gross sein + halt ein sprite mit mehreren Bilder
 
         Renderer.Color3f(1.0f, 1.0f, 1.0f);
         Renderer.DrawString("Test", new Font("Balloons!", 0, 40), getWidth() / 2 - 100, 50);
