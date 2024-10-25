@@ -57,6 +57,7 @@ public class Test extends Application {
 
         Renderer.Color3f(1.0f, 1.0f, 1.0f);
         Renderer.DrawString("Test", new Font("Balloons!", 0, 40), getWidth() / 2 - 100, 50);
+        Renderer.DrawQuad(new int[] {10, 10, 20, 20}, new int[] {10, 20, 20, 10 });;
     }
 
     public void update() {
