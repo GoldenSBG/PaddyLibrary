@@ -1,5 +1,7 @@
 package PaddyLibrary.graphics.animation;
 
+import PaddyLibrary.graphics.sprites.Spritesheet;
+
 /**
  * Base class for animations. There are many types of animations but one common animation is {@link SpriteAnimation}.
  *

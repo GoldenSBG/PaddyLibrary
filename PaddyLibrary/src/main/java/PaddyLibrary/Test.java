@@ -2,6 +2,7 @@ package PaddyLibrary;
 
 import PaddyLibrary.graphics.Renderer;
 import PaddyLibrary.graphics.animation.SpriteAnimation;
+import PaddyLibrary.graphics.sprites.Sprite;
 import PaddyLibrary.graphics.sprites.Spritesheet;
 import PaddyLibrary.input.SimpleKey;
 import PaddyLibrary.input.SimpleMouse;
@@ -28,9 +29,13 @@ public class Test extends Application {
 
     private int x = 200, y = 100, velX = 5, velY = 5;
 
-    private Spritesheet sheet = new Spritesheet("/player/img_1.png");
-    private SpriteAnimation spriteAnimation = new SpriteAnimation(10, sheet.split());
+    private Spritesheet sheetRight = new Spritesheet("/player/player_Idle_right.png", 50, 50);
+    private Spritesheet sheetLeft = new Spritesheet("/player/player_Idle_left.png", 50, 50);
 
+    private SpriteAnimation spriteRightAnimation = new SpriteAnimation(10, sheetRight.split());
+    private SpriteAnimation spriteLeftAnimation = new SpriteAnimation(10, sheetLeft.split());
+
+    private SpriteAnimation currentAnimation = spriteRightAnimation;
     public Test() {
         CreateWindow(850, 580, "test", this).display(WindowUtils.TERMINATE_WINDOW, true, true);
 
@@ -47,7 +52,8 @@ public class Test extends Application {
         Renderer.Color3f(1.0f, 0, 0);
         Renderer.Rect(0, 0, getWidth(), getHeight());
 
-        spriteAnimation.getCurrentSprite().render(x, y, 50, 50); //(Bild muss mind 50x50 gross sein + halt ein sprite mit mehreren Bilder
+        currentAnimation.getCurrentSprite().render(x, y, 50, 50);
+        //spriteRightAnimation.getCurrentSprite().render(x, y, 50, 50); //(Bild muss mind 50x50 gross sein + halt ein sprite mit mehreren Bilder
 
         Renderer.Color3f(1.0f, 1.0f, 1.0f);
         Renderer.DrawString("Test", new Font("Balloons!", 0, 40), getWidth() / 2 - 100, 50);
@@ -55,13 +61,19 @@ public class Test extends Application {
 
     public void update() {
         setQuitKey(0, true);
-
-        spriteAnimation.update();
+        //spriteRightAnimation.update();
 
         if (SimpleKey.getKeyPressed(KeyEvent.VK_W) | SimpleKey.getKeyPressed(KeyEvent.VK_UP)) y -= velY;
         if (SimpleKey.getKeyPressed(KeyEvent.VK_S) | SimpleKey.getKeyPressed(KeyEvent.VK_DOWN)) y += velY;
-        if (SimpleKey.getKeyPressed(KeyEvent.VK_A) | SimpleKey.getKeyPressed(KeyEvent.VK_LEFT)) x -= velX;
-        if (SimpleKey.getKeyPressed(KeyEvent.VK_D) | SimpleKey.getKeyPressed(KeyEvent.VK_RIGHT)) x += velX;
+        if (SimpleKey.getKeyPressed(KeyEvent.VK_A) | SimpleKey.getKeyPressed(KeyEvent.VK_LEFT)) {
+            currentAnimation = spriteLeftAnimation;
+            x -= velX;
+        }
+        if (SimpleKey.getKeyPressed(KeyEvent.VK_D) | SimpleKey.getKeyPressed(KeyEvent.VK_RIGHT)) {
+            currentAnimation = spriteRightAnimation;
+            x += velX;
+        }
+        currentAnimation.update();
     }
 
     public static void main(String[] args) {

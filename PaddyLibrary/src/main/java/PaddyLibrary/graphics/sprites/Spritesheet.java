@@ -33,6 +33,8 @@ public class Spritesheet {
 
         int cols = ((sheet.getWidth() * sheet.getHeight()) / 8) >> 8;
         int rows = ((sheet.getWidth() * sheet.getHeight()) / 8) >> 8;
+        System.out.println("Width: " + sheet.getWidth() + " |  Height: " + sheet.getHeight());
+        System.out.println("Columns: " + cols + " | Rows: " + rows);
 
         if (cols == 0 || rows == 0) {
             throw new IllegalArgumentException("Invalid sprite sheet dimensions, cannot have zero columns or rows");
@@ -207,6 +209,7 @@ public class Spritesheet {
 
         return sprites;
     }
+
 
     /**
      * Returns the loaded {@link BufferedImage} image.
