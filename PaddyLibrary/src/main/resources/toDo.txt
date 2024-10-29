@@ -3,3 +3,80 @@ from PaddyLibrary.brawlhallaGame import MainApplication
 # Instanz der MainApplication Klasse erstellen und Fenster anzeigen
 app = MainApplication()
 app.setVisible(True)
+
+
+
+
+- testing
+
+from PaddyLibrary import *
+
+# Spielvariablen
+x, y = 200, 100
+velX, velY = 5, 5
+groundLevel = 500
+gravity = 0.5
+fallSpeed = 0
+onGround = False
+
+# Fenster- und Sprite-Konfiguration
+Test()
+
+# Sprites laden
+spriteRight = graphics.sprites.Spritesheet("../test", 50, 50)
+spriteLeft = Sprite("player/player_Idle_left.png", 50, 50)
+currentSprite = spriteRight
+
+def loadSprite(filePath):
+    return Sprite(filePath, 50, 50)
+
+# Funktion für die Animation wechseln
+def changeAnimation(direction):
+    global currentSprite
+    if direction == "right":
+        currentSprite = spriteRight
+    elif direction == "left":
+        currentSprite = spriteLeft
+
+# Spielablauf aktualisieren
+def update():
+    global x, y, fallSpeed, onGround
+
+    # Schwerkraft anwenden
+    if not onGround:
+        fallSpeed += gravity
+        y += fallSpeed
+    else:
+        fallSpeed = 0
+
+    # Boden-Kollision
+    if y + 50 >= groundLevel:
+        y = groundLevel - 50
+        onGround = True
+    else:
+        onGround = False
+
+    # Spielersteuerung
+    if isKeyPressed("w") or isKeyPressed("up"):
+        y -= velY
+    if isKeyPressed("s") or isKeyPressed("down"):
+        y += velY
+    if isKeyPressed("a") or isKeyPressed("left"):
+        changeAnimation("left")
+        x -= velX
+    if isKeyPressed("d") or isKeyPressed("right"):
+        changeAnimation("right")
+        x += velX
+
+    # Sprite und Szene aktualisieren
+    clear("white")
+    currentSprite.draw(x, y, 50, 50)
+
+# Hauptschleife für das Spiel
+def main():
+    while True:
+        update()
+        sleep(0.03)
+
+# Spiel starten
+main()

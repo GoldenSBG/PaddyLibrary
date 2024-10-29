@@ -137,6 +137,7 @@ public class Spritesheet {
 
         width = sheet.getWidth();
         height = sheet.getHeight();
+        System.out.println("Width: " + sheet.getWidth() + " |  Height: " + sheet.getHeight());
 
         this.spriteWidth = spriteWidth;
         this.spriteHeight = spriteHeight;
