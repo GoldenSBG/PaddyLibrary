@@ -42,6 +42,7 @@ public class Test1 extends Application {
         player.update();
         world.checkCollisions(player);
         levelGenerator.updatePlatforms(player.getX());
+
     }
 
     public static void main(String[] args) {

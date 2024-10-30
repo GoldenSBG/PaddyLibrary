@@ -5,6 +5,11 @@ app = MainApplication()
 app.setVisible(True)
 
 
+für test:
+from PaddyLibrary import *
+
+Game(500, 500, "Test", 3, True, True, True)
+
 
 
 - testing
