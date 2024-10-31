@@ -6,8 +6,9 @@ import PaddyLibrary.utils.WindowUtils;
 import java.awt.Dimension;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.awt.event.ActionListener;
 
-import javax.swing.JFrame;
+import javax.swing.*;
 
 /**
  * Default window for SJGL. {@code SimpleWindow} should be used with the {@link Application} class.
@@ -26,7 +27,6 @@ public final class SimpleWindow {
     private String title;
 
     private Application application;
-
     private int closeOperation;
 
     /**
@@ -78,7 +78,6 @@ public final class SimpleWindow {
         display.add(application);
 
         Dimension size = new Dimension(width, height);
-
         display.setPreferredSize(size);
         display.setMaximumSize(size);
         display.setMinimumSize(size);
@@ -86,11 +85,11 @@ public final class SimpleWindow {
         display.setDefaultCloseOperation(closeOperation);
         display.setResizable(false);
         display.pack();
+
         if (center)
             display.setLocationRelativeTo(null);
         display.setVisible(visible);
     }
-
     /**
      *
      * Sets the window's resizable property. The window's resizable is set to false by default.

@@ -6,26 +6,30 @@ import PaddyLibrary.input.SimpleKey;
 import PaddyLibrary.physics.Gravity;
 import PaddyLibrary.world.Platform;
 
+import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Player {
+public class Enemies {
     private int x, y, velX = 5, velY = 5;
     private boolean onGround = false;
     private Gravity gravity;
     private int groundLevel;
     private SpriteAnimation currentAnimation;
     private Map<String, SpriteAnimation> animations = new HashMap<>();
+    private int health; // Lebenspunkte
 
-    public Player(int startX, int startY, int groundLevel) {
+    public Enemies(int startX, int startY, int groundLevel) {
         this.x = startX;
         this.y = startY;
         this.groundLevel = groundLevel;
         this.gravity = new Gravity(0.5f, 10);
+        this.health = 100; // Setze Anfangsleben
 
         loadAnimations();
-        currentAnimation = animations.get("Idleright"); // Standardanimation
+        currentAnimation = animations.get("Idleright");
     }
 
     private void loadAnimations() {
@@ -48,7 +52,7 @@ public class Player {
     }
 
     public void update() {
-        // Schwerkraft anwenden, falls Spieler nicht am Boden ist
+        // Schwerkraft anwenden, falls der Gegner nicht am Boden ist
         if (!onGround) {
             gravity.applyGravity();
             y += gravity.getVelocityY();
@@ -63,15 +67,7 @@ public class Player {
             onGround = false;
         }
 
-        if (SimpleKey.getKeyPressed(KeyEvent.VK_W)
-                || SimpleKey.getKeyPressed(KeyEvent.VK_UP)
-                || SimpleKey.getKeyPressed(KeyEvent.VK_SPACE) && onGround) {
-            gravity.setVelocityY(-15);
-            onGround = false;
-            y -= velY;
-        }
-        if (SimpleKey.getKeyPressed(KeyEvent.VK_S) || SimpleKey.getKeyPressed(KeyEvent.VK_DOWN)) y += velY;
-
+        // Bewegung (z.B. nach Links oder Rechts) könnte hier implementiert werden
         if (SimpleKey.getKeyPressed(KeyEvent.VK_A) || SimpleKey.getKeyPressed(KeyEvent.VK_LEFT)) {
             currentAnimation = animations.get("Idleleft");
             x -= velX;
@@ -79,14 +75,36 @@ public class Player {
         if (SimpleKey.getKeyPressed(KeyEvent.VK_D) || SimpleKey.getKeyPressed(KeyEvent.VK_RIGHT)) {
             currentAnimation = animations.get("Idleright");
             x += velX;
-        } else if (onGround) {
-            currentAnimation = animations.get("Idleright");
         }
+
+        // Aktualisiere die Animation
         currentAnimation.update();
     }
 
-    public void render() {
+    public void takeDamage(int damage) {
+        health -= damage;
+        if (health <= 0) {
+            despawn(); // Gegner despawn, wenn Leben 0
+        }
+    }
+
+    private void despawn() {
+        // Logik, um den Gegner aus dem Spiel zu entfernen
+        // Hier könntest du den Gegner aus der Welt oder der Liste der Gegner entfernen
+    }
+
+    public void render(Graphics g) {
         currentAnimation.getCurrentSprite().render(x, y, 50, 50);
+
+        // Rendern der Lebensanzeige
+        renderHealthBar(g);
+    }
+
+    private void renderHealthBar(Graphics g) {
+        g.setColor(Color.RED);
+        g.fillRect(x, y - 10, 50, 5); // Hintergrund der Lebensanzeige
+        g.setColor(Color.GREEN);
+        g.fillRect(x, y - 10, 50 * health / 100, 5); // Vordergrund der Lebensanzeige
     }
 
     public void cameraRender(int cameraX, int cameraY) {
@@ -108,5 +126,4 @@ public class Player {
     public void setY(int y) {
         this.y = y;
     }
-
 }

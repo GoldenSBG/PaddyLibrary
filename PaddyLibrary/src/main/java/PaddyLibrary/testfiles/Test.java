@@ -1,8 +1,8 @@
-package PaddyLibrary;
+package PaddyLibrary.testfiles;
 
+import PaddyLibrary.Application;
 import PaddyLibrary.graphics.Renderer;
 import PaddyLibrary.graphics.animation.SpriteAnimation;
-import PaddyLibrary.graphics.sprites.Sprite;
 import PaddyLibrary.graphics.sprites.Spritesheet;
 import PaddyLibrary.input.SimpleKey;
 import PaddyLibrary.input.SimpleMouse;
@@ -10,7 +10,6 @@ import PaddyLibrary.physics.Gravity;
 import PaddyLibrary.utils.MouseUtils;
 import PaddyLibrary.utils.WindowUtils;
 
-import java.awt.Font;
 import java.awt.event.KeyEvent;
 
 @SuppressWarnings("serial")
