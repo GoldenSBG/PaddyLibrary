@@ -48,13 +48,11 @@ public class Player {
     }
 
     public void update() {
-        // Schwerkraft anwenden, falls Spieler nicht am Boden ist
         if (!onGround) {
             gravity.applyGravity();
             y += gravity.getVelocityY();
         }
 
-        // Boden-Kollision prüfen
         if (y + 50 >= groundLevel) {
             y = groundLevel - 50;
             onGround = true;
