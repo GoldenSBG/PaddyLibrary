@@ -1,15 +1,12 @@
 package PaddyLibrary.testfiles;
 
-
 import PaddyLibrary.Application;
-import PaddyLibrary.entities.Enemies;
+import PaddyLibrary.audio.Audio;
 import PaddyLibrary.entities.Player;
 import PaddyLibrary.graphics.Renderer;
 import PaddyLibrary.utils.WindowUtils;
 import PaddyLibrary.world.LevelGenerator;
 import PaddyLibrary.world.World;
-
-import java.util.List;
 
 @SuppressWarnings("serial")
 public class Test1 extends Application {
@@ -35,8 +32,6 @@ public class Test1 extends Application {
         Renderer.Color3f(1.0f, 0, 0);
         Renderer.Rect(0, 0, getWidth(), getHeight());
 
-        //levelGenerator.renderPlatforms();
-        //player.render();
         levelGenerator.renderCameraPlatforms(cameraX, cameraY);
         player.cameraRender(cameraX, cameraY);
 

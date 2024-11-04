@@ -31,6 +31,8 @@ public class Player {
     private void loadAnimations() {
         animations.put("Idleright", loadAnimation("/player/player_Idle_right.png", 10));
         animations.put("Idleleft", loadAnimation("/player/player_Idle_left.png", 10));
+        animations.put("attack", loadAnimation("/player/attack.png", 10));
+        animations.put("hurt", loadAnimation("/player/hurt.png", 10));
     }
 
     private SpriteAnimation loadAnimation(String filePath, int frameRate) {
@@ -64,11 +66,15 @@ public class Player {
         if (SimpleKey.getKeyPressed(KeyEvent.VK_W)
                 || SimpleKey.getKeyPressed(KeyEvent.VK_UP)
                 || SimpleKey.getKeyPressed(KeyEvent.VK_SPACE) && onGround) {
+            currentAnimation = animations.get("hurt");
             gravity.setVelocityY(-15);
             onGround = false;
             y -= velY;
         }
-        if (SimpleKey.getKeyPressed(KeyEvent.VK_S) || SimpleKey.getKeyPressed(KeyEvent.VK_DOWN)) y += velY;
+        if (SimpleKey.getKeyPressed(KeyEvent.VK_S) || SimpleKey.getKeyPressed(KeyEvent.VK_DOWN)) {
+            currentAnimation = animations.get("attack");
+            y += velY;
+        }
 
         if (SimpleKey.getKeyPressed(KeyEvent.VK_A) || SimpleKey.getKeyPressed(KeyEvent.VK_LEFT)) {
             currentAnimation = animations.get("Idleleft");
