@@ -1,4 +1,4 @@
-package PaddyLibraryTest;
+package PaddyLibraryTest.testFiles;
 
 import PaddyLibrary.Application;
 import PaddyLibrary.entities.Player;
