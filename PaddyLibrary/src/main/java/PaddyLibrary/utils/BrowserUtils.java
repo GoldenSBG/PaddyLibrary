@@ -1,7 +1,7 @@
 package PaddyLibrary.utils;
 
 import java.awt.*;
-import java.net.*;
+import java.net.URI;
 
 public class BrowserUtils {
 

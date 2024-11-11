@@ -2,7 +2,6 @@ package PaddyLibrary.world;
 
 import PaddyLibrary.entities.Enemies;
 import PaddyLibrary.entities.Player;
-import java.util.List;
 
 public class World {
     private LevelGenerator levelGenerator;

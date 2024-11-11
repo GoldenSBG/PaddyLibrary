@@ -1,6 +1,6 @@
 package PaddyLibrary.physics.collision;
 
-import java.awt.Rectangle;
+import java.awt.*;
 
 /**
  * Default class for <strong>rectangle</strong> collision bounds.

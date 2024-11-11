@@ -1,7 +1,5 @@
 package PaddyLibrary.world;
 
-import PaddyLibrary.graphics.Renderer;
-
 import java.util.Random;
 
 public class Chunk {

@@ -1,6 +1,5 @@
 package PaddyLibrary.graphics.animation;
 
-
 import PaddyLibrary.Application;
 import PaddyLibrary.graphics.sprites.Sprite;
 import PaddyLibrary.graphics.sprites.Spritesheet;

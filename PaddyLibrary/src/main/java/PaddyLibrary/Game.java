@@ -1,12 +1,12 @@
 package PaddyLibrary;
 
-import PaddyLibrary.audio.Audio;
 import PaddyLibrary.utils.WindowUtils;
 
 import static PaddyLibrary.graphics.Renderer.Color3f;
 
+
 public class Game extends Application {
-    private Audio audio;
+
     public Game(int width, int height, String title, int closeOperation, boolean visibility, boolean center, boolean resizable) {
         CreateWindow(width, height, title, this).display(closeOperation, visibility, center);
         getMainWindow().setResizable(resizable);

@@ -6,8 +6,7 @@ import PaddyLibrary.input.SimpleKey;
 import PaddyLibrary.physics.Gravity;
 import PaddyLibrary.world.Platform;
 
-import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.util.HashMap;
 import java.util.Map;

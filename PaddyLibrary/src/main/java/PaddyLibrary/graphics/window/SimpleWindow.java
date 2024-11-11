@@ -3,12 +3,10 @@ package PaddyLibrary.graphics.window;
 import PaddyLibrary.Application;
 import PaddyLibrary.utils.WindowUtils;
 
-import java.awt.Dimension;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.*;
 
 /**
  * Default window for SJGL. {@code SimpleWindow} should be used with the {@link Application} class.

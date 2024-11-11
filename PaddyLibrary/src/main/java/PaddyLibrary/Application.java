@@ -1,18 +1,15 @@
 package PaddyLibrary;
 
-import PaddyLibrary.graphics.Renderer;
 import PaddyLibrary.graphics.window.SimpleWindow;
 import PaddyLibrary.input.SimpleKey;
 import PaddyLibrary.utils.WindowUtils;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.image.BufferStrategy;
-
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
 
 /**
  * <strong>Packaged class containing main game loop, graphics rendering, thread handling, etc.</strong>

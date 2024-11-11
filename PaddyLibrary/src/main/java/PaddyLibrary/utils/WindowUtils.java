@@ -1,8 +1,6 @@
 package PaddyLibrary.utils;
 
-import PaddyLibrary.graphics.window.SimpleWindow;
-
-import javax.swing.JFrame;
+import javax.swing.*;
 
 public class WindowUtils {
     public static final int TERMINATE_WINDOW = JFrame.EXIT_ON_CLOSE;

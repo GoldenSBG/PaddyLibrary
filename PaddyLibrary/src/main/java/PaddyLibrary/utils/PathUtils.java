@@ -2,10 +2,9 @@ package PaddyLibrary.utils;
 
 import PaddyLibrary.graphics.sprites.Sprite;
 
+import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-
-import javax.imageio.ImageIO;
 
 public class PathUtils {
 
